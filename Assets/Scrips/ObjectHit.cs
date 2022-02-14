@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ObjectHit : MonoBehaviour
 {  
+
+    
     private void OnCollisionEnter(Collision other){
 
         Debug.Log("Eat Shit Cubeguy");
-
+        GetComponent<MeshRenderer>().material.color = Color.magenta;
 
 
     }
