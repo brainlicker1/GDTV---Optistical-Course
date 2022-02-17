@@ -6,7 +6,18 @@ public class FallTimer : MonoBehaviour
 { 
     
     [SerializeField] float  dropTime = 1f;
-    
+    Rigidbody rb;
+    MeshRenderer mRender;
+
+     void Awake() {
+        rb = GetComponent<Rigidbody>();
+        mRender = GetComponent<MeshRenderer>();
+    }
+     void Start()
+    {   
+        mRender.enabled = false;
+        rb.useGravity = false;
+    }
        void Update()
     {
         Timer();
@@ -16,8 +27,9 @@ public class FallTimer : MonoBehaviour
 
        var gTimer = Time.time;
        if(gTimer > dropTime )  {
-
-           Debug.Log("5 seconds");
+           mRender.enabled = true;
+           rb.useGravity = true;
+           
 
        }
        
