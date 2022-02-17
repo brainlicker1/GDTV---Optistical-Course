@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FallTimer : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+{ 
+    
+    [SerializeField] float  dropTime = 1f;
+    
+       void Update()
     {
-        
+        Timer();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Timer(){
+
+       var gTimer = Time.time;
+       if(gTimer > dropTime )  {
+
+           Debug.Log("5 seconds");
+
+       }
+       
+
     }
 }
