@@ -10,9 +10,11 @@ public class ScoreKeeper : MonoBehaviour
 
   private void OnCollisionEnter(Collision other){
 
-
-      score++;
+      if(other.gameObject.tag != "AlreadyHit"){
+        score++;
       Debug.Log(score);
+      }
+     
   }
       
   
